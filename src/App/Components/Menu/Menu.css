@@ -1,0 +1,16 @@
+.menu p{
+    padding: 0  1em;
+    margin-top: 0.5em;
+}
+
+.menu{
+  color: black;
+}
+
+
+.authors{
+    border-left: 1px solid black;
+    border-right: 1px solid black; 
+
+
+}
