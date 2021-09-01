@@ -1,11 +1,12 @@
-class BlogPost {
-    constructor(title,content,id,userId){
-        this.title=title;
-        this.content=content;
-        this.id=id;
-        this.userId=userId;
+class BlogPosts {
+    constructor(posts){
+    
+        this.posts=[1]
     }
+   
     
 }
 
-export default BlogPost;
+
+
+export default BlogPosts;
