@@ -1,0 +1,23 @@
+
+
+.post-title{
+    text-align: center;
+}
+
+.post-author{
+    text-align: center;
+}
+
+.post-text{
+    text-align: center;
+    width: 70%;
+    margin: 0 auto;
+    padding-bottom: 2em;
+    border-bottom: 1px solid black;
+}
+
+.post-counter{
+    margin:2em 0 0 1.4em;
+    font-weight: 700;
+    font-size: 20px;
+}

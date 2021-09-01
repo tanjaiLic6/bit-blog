@@ -7,6 +7,7 @@ import { authorEndpoint } from '../../../../../Shared/endpoints';
 import { Posts } from '../../Posts/Posts';
 import { getPosts } from '../../../../../Services/BlogService';
 import { Link } from 'react-router-dom';
+import './PostDetails.css'
 // import { BrowserRouter } from 'react-router-dom';
 
 export class PostDetails extends Component{
@@ -17,7 +18,8 @@ export class PostDetails extends Component{
             author:'name',
             authorNumPosts:0,
             authorPosts:[],
-            singleId:''
+            authorId:''
+            
           
             
         }
@@ -35,8 +37,10 @@ export class PostDetails extends Component{
      .then((res)=>{
         fetch(authorEndpoint+'/'+this.state.post.userId)
         .then((res)=>res.json())
-       .then((res)=>this.setState({author:res.name}))
+       .then((res)=>{this.setState({author:res.name}); return res})
+      //  .then((res)=>{this.setState({authorId:res.id}); return res})
        .then(()=>{
+        //  console.log(this.state.authorId)
            getPosts().then((res)=>res.filter((posts)=>
          posts.userId==this.state.post.userId  ))
          .then((res)=>{this.setState({authorNumPosts:res.length}); return res })
@@ -71,12 +75,12 @@ export class PostDetails extends Component{
        
         return(
            
-            <div>
+            <div className='postdetails-wrapper container'>
              
-               <h1>{this.state.post.title}</h1>
-               <p>{this.state.author}</p>
-               <p>{this.state.post.body}</p>
-               <p>{this.state.authorNumPosts} more posts from this author</p>
+               <h1 className='post-title'>{this.state.post.title}</h1>
+              <Link to={`/author/${this.state.post.userId}`}> <p className='post-author'>{this.state.author}</p></Link>
+               <p className='post-text'>{this.state.post.body}</p>
+               <p className='post-counter'>{this.state.authorNumPosts} more posts from this author</p>
                <ul> 
                    { this.state.authorPosts.map((post,index)=>{
                        
