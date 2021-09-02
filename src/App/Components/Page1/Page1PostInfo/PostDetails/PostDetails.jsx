@@ -18,21 +18,16 @@ export class PostDetails extends Component{
             author:'name',
             authorNumPosts:0,
             authorPosts:[],
-            authorId:''
-            
-          
-            
+            authorId:''           
         }
     }
 
- 
  componentDidMount(){
    console.log(this.props.match)
     fetch(postsEndpoint+'/'+this.props.match.params.id)
     .then((res)=> res.json())
     .then((res)=>
       this.setState({post:res})
-    
      )
      .then((res)=>{
         fetch(authorEndpoint+'/'+this.state.post.userId)
@@ -45,36 +40,18 @@ export class PostDetails extends Component{
          posts.userId==this.state.post.userId  ))
          .then((res)=>{this.setState({authorNumPosts:res.length}); return res })
          .then((res)=>{this.setState({authorPosts:res})})
-         .then(()=>console.log(this.state.authorPosts))
-          
+         .then(()=>console.log(this.state.authorPosts)) 
         })
-           
-
-     });
-     
-     
-
-    
-     
+     });    
  }
-
  componentDidUpdate(prevProps){
     if (prevProps.match.params.id !== this.props.match.params.id) {
       this.componentDidMount()
     }
   }
-  
- 
-
-    render()
-    
- 
-    
+      render()  
     {
-
-       
         return(
-           
             <div className='postdetails-wrapper container'>
              
                <h1 className='post-title'>{this.state.post.title}</h1>
