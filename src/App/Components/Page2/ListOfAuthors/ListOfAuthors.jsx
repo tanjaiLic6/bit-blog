@@ -1,6 +1,7 @@
 import React,{ Component } from 'react';
 import { getAuthors } from '../../../../Services/AuthorService';
 import './ListOfAuthors.css';
+import { Link } from "react-router-dom";
 
 export class ListOfAuthors extends Component {
 constructor(props){
@@ -22,7 +23,7 @@ render(){
 {
     this.state.authors.map((author,index) => {
     return (   
-    <p className ="listOfAuthors "key = {author.id}>{author.name}</p>
+    <Link to = {`/author/${author.id}`}><p className ="listOfAuthors" key = {author.id}>{author.name}</p></Link>
 )})
 }
 </div>

@@ -7,6 +7,7 @@ import { PostDetails } from './Components/Page1/Page1PostInfo/PostDetails/PostDe
 import { BrowserRouter as Router,Route,Switch } from 'react-router-dom';
 import { authorEndpoint } from '../Shared/endpoints';
 import { ListOfAuthors } from './Components/Page2/ListOfAuthors/ListOfAuthors';
+import { AuthorDetails } from './Components/Page2/AuthorDetails/AuthorDetails';
 // import { BrowserRouter } from 'react-router-dom';
 
 
@@ -18,9 +19,9 @@ function App() {
       <Header />
       <Switch>
       <Route exact='/' path='/' component={Posts}/>
-      <Route  path='/postsdetails/:id'  component={PostDetails}/>
-      <Route  path='/authors'  component={ListOfAuthors}/>
-      {/* <Route path='/author/id' component={Author}/> */}
+      <Route path='/postsdetails/:id'  component={PostDetails}/>
+      <Route path='/authors'  component={ListOfAuthors}/>
+      <Route path='/author/:id' component={AuthorDetails}/>
        </Switch>
       <Footer />
       
