@@ -1,6 +1,6 @@
 import React,{ Component } from 'react';
-import { getAuthors } from '../../../Services/AuthorService';
-import { SingleAuthor } from '../SingleAuthor/SingleAuthor';
+import { getAuthors } from '../../../../Services/AuthorService';
+import './ListOfAuthors.css';
 
 export class ListOfAuthors extends Component {
 constructor(props){
@@ -15,18 +15,15 @@ componentDidMount(){
 });
 }
 
-
-
 render(){
     return(
-<div className = 'listOfAuthors container'>     
-    <h2 style = {{textAlign: 'center', paddingBottom: '1em'}}> AUTHORS </h2>
+<div className = 'container'>     
+    <h2 style = {{textAlign: 'center', paddingBottom: '1em'}}> AUTHORS ({this.state.authors.length})</h2>
 {
     this.state.authors.map((author,index) => {
-    while( index < 11 ){ 
     return (   
-    <SingleAuthor name = {author} />
-)}})
+    <p className ="listOfAuthors "key = {author.id}>{author.name}</p>
+)})
 }
 </div>
 )};
