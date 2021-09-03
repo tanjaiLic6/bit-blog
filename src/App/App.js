@@ -9,6 +9,7 @@ import { authorEndpoint } from '../Shared/endpoints';
 import { ListOfAuthors } from './Components/Page2/ListOfAuthors/ListOfAuthors';
 import { AuthorDetails } from './Components/Page2/AuthorDetails/AuthorDetails';
 import { About } from './Components/About/About';
+import { NewPost } from './Components/NewPost/NewPost';
 // import { BrowserRouter } from 'react-router-dom';
 
 
@@ -24,6 +25,7 @@ function App() {
       <Route path='/authors'  component={ListOfAuthors}/>
       <Route path='/author/:id' component={AuthorDetails}/>
       <Route path='/about' component={About}/>
+      <Route exact path='/posts/new' component={NewPost}/>
        </Switch>
       <Footer />
       
