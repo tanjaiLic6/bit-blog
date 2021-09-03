@@ -8,6 +8,7 @@ import { BrowserRouter as Router,Route,Switch } from 'react-router-dom';
 import { authorEndpoint } from '../Shared/endpoints';
 import { ListOfAuthors } from './Components/Page2/ListOfAuthors/ListOfAuthors';
 import { AuthorDetails } from './Components/Page2/AuthorDetails/AuthorDetails';
+import { About } from './Components/About/About';
 // import { BrowserRouter } from 'react-router-dom';
 
 
@@ -22,6 +23,7 @@ function App() {
       <Route path='/postsdetails/:id'  component={PostDetails}/>
       <Route path='/authors'  component={ListOfAuthors}/>
       <Route path='/author/:id' component={AuthorDetails}/>
+      <Route path='/about' component={About}/>
        </Switch>
       <Footer />
       
