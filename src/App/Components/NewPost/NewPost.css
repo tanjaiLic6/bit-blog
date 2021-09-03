@@ -1,0 +1,36 @@
+.new-Post{
+    width:50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.new-Post div{
+    margin: 2em 0;
+}
+
+label{
+    display: block;
+    text-align: left;
+    font-weight: 700;
+    margin-bottom: 1em;
+}
+
+input{
+    width: 100%;
+}
+
+textarea{
+    width: 100%;
+}
+
+button{
+    margin: 0 1em;
+    padding: 5px 15px;
+   
+}
+.btns{
+    text-align: right;
+}
+.btns :last-child{
+    margin-right: 0;
+}
