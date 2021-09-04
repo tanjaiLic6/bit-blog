@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import userIcon  from '../../../../../../src/Shared/userIcon.png';
-// import { getAuthors } from '../../../../Services/AuthorService';
+import './NameInfo.css';
+
 
 export class NameInfo extends Component {
    constructor(props){
@@ -8,14 +9,18 @@ export class NameInfo extends Component {
     }
 
 render(){
+   console.log(this.props.nameInfo)
       return(   
-         <div className = "d-flex">
-            <div><img src = {userIcon} ></img></div>
+         <div className = "d-flex nameInfo">
             <div>
-            <h2>Name Surname</h2>
-            <p>Username</p>
-            <p>Email</p>
-            <p>Phone</p>
+               <img src = {userIcon} ></img>
+            </div>
+
+            <div>
+            <h2>{this.props.nameInfo.name}</h2>
+            <p>Username: {this.props.nameInfo.username}</p>
+            <p>Email: {this.props.nameInfo.email}</p>
+            <p>Phone: {this.props.nameInfo.phone}</p>
             </div>
          </div>
        )
